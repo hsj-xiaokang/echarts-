@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-    <!-- 引入 echarts.js -->
+    <!-- 引入 echarts.js 没有时间轴是Y轴这么逆天的需求！！！！！-->
     <script src="echarts.js"></script>
 </head>
 <body>
@@ -35,17 +35,17 @@
     xAxis : [
         {
             type : 'category',
-            data : ['2017-09-21','2017-09-22','2017-09-23','2017-09-24','2017-09-25','2017-09-26','2017-09-27'],
+            data : ['风速传感器','降雨传感器','温度传感器','湿度传感器','光照传感器','风向传感器','电池传感器'],
             axisLabel:{
                                 interval:0,
                                 rotate:30,//倾斜度 -90 至 90 默认为0
                                 margin:9,
-                                show : false //坐标轴文本标签选项
+                                show :true//坐标轴文本标签选项
            }
         }
     ],
 	                    dataZoom : [{ //数据区域缩放，仅对直角坐标系适用
-                        show : true,
+                        show :false,
                         realtime : true,//缩放变化是否实时显示
                         orient: 'horizontal', //布局方式，可选为：'horizontal' ,'vertical'
 //                        x: 110,//水平安放位置，默认为根据grid参数适配px                        y : -30, //垂直安放
@@ -78,19 +78,19 @@
             name:'在线',
             type:'bar',
             stack: '堆叠统计',
-            data:[120, 132, 101, 134, 90, 230, 210]
+            data:[0.4,0.2,0.5,0.1,0.1,0.1,0.2]
         },
         {
             name:'离线',
             type:'bar',
             stack: '堆叠统计',
-            data:[220, 182, 191, 234, 290, 330, 310]
+            data:[0.4,0.7,0.3,0.3,0.2,0.1,0.2]
         },
         {
             name:'数据无法接收',
             type:'bar',
             stack: '堆叠统计',
-            data:[150, 232, 201, 154, 190, 330, 410]
+            data:[0.2,0.1,0.2,0.6,0.7,0.8,0.6]
         },
         
     ]
